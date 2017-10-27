@@ -1,0 +1,157 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage{enumerate}
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+
+\begin{center}
+{\Large Knowledge Discovery in Database  - Assignment 1 \hspace{0.5cm}}\\
+\textbf{Alex Romelt, Alex Vonig, Yu Xiang}\\ %You should put your name here
+Date: \today %You should write the date here.
+\end{center}
+
+\vspace{0.2 cm}
+
+
+\subsection*{Problem 1-1}
+\begin{enumerate}[(a)] % (a), (b), (c), ...
+	\item Classification; unsupervised
+	\item Association analysis; supervised
+	\item Outliers detection; unsupervised
+	\item Association Analysis; unsupervised
+	\item cluster analysis; unsupervised
+\end{enumerate}
+
+
+
+\subsection*{Problem 1-2}
+\begin{enumerate}[(a)] % (a), (b), (c), ...
+	\item A and B are not independent. \newline
+	If A and B are independent, then $$P(A\cap B) = P(A) * P(B) $$
+	However, $A\cap B = \emptyset$, $P(A\cap B) = 0$, while $P(A)\neq 0, P(B)\neq 0 $, thus $P(A\cap B) \neq P(A) * P(B)$, which means A and B can not be independent.
+	
+	\item Proof of Bayes' Rule using only Conditional Probability. \newline
+	Based on conditional probability, we have:
+	$$P(B|A) =\frac{P(AB)}{P(A)}, therefore, P(AB) = P(B|A)P(A)$$ 
+	So, we will have
+	$$P(A|B) =\frac{P(AB)}{P(B)} = \frac{P(B|A)P(A)}{P(B)}$$	
+\end{enumerate}
+
+\subsection*{Problem 1-3}
+\begin{enumerate}[(a)] % (a), (b), (c), ...
+	\item Define $H1, T1; H2, T2$ as the possible results of the first and second coins; $\{i, i = 1, 2, ..., 12\}$ as the possible outcomes of the fair dice.  \newline
+	The sample space of the possible outcome is as follows: 
+	$$\{H1H2i,H1T2i,T1H2i,T1T2i, i = 1, 2, ...12 \}$$
+	The size of the sample space is 48. 
+	
+	\item Define $I_{i>5}$ as the case that the dice shows a number greater than 5. Notice, the result of the dice is independent with the result of the coins, also the results of coins are independent with each other.  Thus, 
+	$$P(A_{1}) = P(H1H2I_{i>5})= P(H1)P(H2)P(I_{i>5}) = \frac{1}{2}*\frac{1}{2}*\frac{7}{12} = \frac{7}{48}$$
+	
+	\item Only considering the result of the coins, the probablity of event $A$ (at least one head shown) is equal to one minus the probablity of event $B$ (no head shown). 
+	Thus $P(A) = 1 - P(B) = 1 - P(T1T2)= 1- \frac{1}{2}*\frac{1}{2} = \frac{3}{4}$
+	The dice result is indepenent with the coins. Thus the probablity of at least one coins turns up (head shown) and the dice shows a number greater than 7 is: 
+	$$P(A_{2}) = P(AI_{i>7}) = P(A)P(I_{i>7}) = \frac{3}{4}*\frac{5}{12} = \frac{5}{16}$$
+	
+	\item Event $A$ (no head shown), $B$(one head shown), $C$(two heads shown) are mutually exclusive, and sum together to a probablity of one. 
+	Thus 
+		
+	\begin{align*}
+	P(A_{3}) &= P(A_{3}, A) + P(A_{3}, B) + P(A_{3}, C)\\
+	& = P(A_{3}|A) P(A) + P(A_{3}|B) P(B) + P(A_{3}|C) P(C)\\
+	& = 0 * P(A) + P(I_{i<=2})P(B) + P(I_{i<=4})P(C)\\
+	& = 0 * \frac{1}{4} + \frac{1}{6} * \frac{1}{2} + \frac{4}{12} *\frac{1}{4} \\
+	& =  \frac{1}{6}
+	\end{align*}										
+\end{enumerate}
+
+\subsection*{Problem 1-4}
+
+\begin{enumerate}[(a)]
+	\item Define $S$ as studying computer science, $O$ as studying other subjects, we know
+	$$P(A_{42}|S) = 0.01, P(A_{42}|O) = 2* 10^{-5}, P(S) = 0.25  $$
+	Studying computer science and other subjects are mutually exclusive. Thus the probablity that $A_{42}$ is found:
+	$$P(A_{42}) = P(A_{42},S)P(S) + P(A_{42},O)P(O) = 0.01 * 0.25 +  2* 10^{-5} * (1- 0.25) = 2.515 * 10^{-3} $$
+	
+	\item 
+	  \begin{enumerate}[(1)]
+	  	\item The probability that Computer Science is studied given $A_{42}$ is found: 
+	  	 $$P(S|A_{42})= \frac{P(SA_{42})}{P(A_{42})} = \frac{P(A_{42}|S)P(S)}{P(A_{42})} = \frac{0.01*0.25}{2.515 * 10^{-3}} = 0.994$$
+	  	\item Define $nA$ as event that $A_{42}$ is not found, the probability that Computer Science is studied given $A_{42}$ is not found: 
+	  	
+	  	 $$P(S|nA)= \frac{P(S*nA)}{P(nA)} = \frac{P(nA|S)P(S)}{P(nA)} = \frac{(1-P(A_{42}|S)P(S)}{P(nA)} = \frac{(1-0.01)*0.25}{1-2.515 * 10^{-3}} = 0.248$$	  	
+	  \end{enumerate}	 
+\end{enumerate}
+
+\end{document}
+
+

@@ -5,7 +5,7 @@ Created on Fri Oct 27 14:44:39 2017
 @author: 
 Alex Romelt 
 Alex Vonig
-Yu Xiang  shawnxiangyu@yahoo.com
+Yu Xiang  
 
 """
 
