@@ -3,9 +3,9 @@
 Created on Fri Oct 27 14:44:39 2017
 
 @author: 
-Alex Romelt 
-Alex Vonig
-Yu Xiang  
+Alex Romelt, Matrikei. Nr:  , Email: 
+Alex Vonig,  Matrikei. Nr:  , Email: 
+Yu Xiang, ,  Matrikei. Nr: 3529787,  Email: shawnxiangyu@yahoo.com  
 
 """
 
@@ -48,6 +48,6 @@ print ('the largest non-negative correlation coefficient is: ', largest_pcorr)
 # plot a scatter of the two attributes with the highest positive correlation coefficients
 plt.figure()
 plt.scatter(iris[:,location[0]], iris[:,location[1]])
-plt.xlabel('Attribute: %d', location[0] + 1 )
+plt.xlabel('Attribute: ' + str(location[0] + 1))
 
         
